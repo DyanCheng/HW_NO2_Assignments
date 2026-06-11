@@ -1,0 +1,39 @@
+@page
+@model New_folder.Pages.Books.IndexModel
+@{
+    ViewData["Title"] = "Book List";
+}
+
+<h1>Books</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Create New Book</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var book in Model.Books)
+    {
+        <tr>
+            <td>@book.Id</td>
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+            <td>@book.Year</td>
+            <td>
+                <a class="btn btn-sm btn-secondary" asp-page="Details" asp-route-id="@book.Id">Details</a>
+                <a class="btn btn-sm btn-warning" asp-page="Edit" asp-route-id="@book.Id">Edit</a>
+                <a class="btn btn-sm btn-danger" asp-page="Delete" asp-route-id="@book.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
