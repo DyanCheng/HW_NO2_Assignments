@@ -1,0 +1,24 @@
+@model Book
+@{
+    ViewData["Title"] = "Xóa sách";
+}
+
+<h2>Xóa sách</h2>
+
+<p>Bạn có chắc muốn xóa sách <strong>@Model.Name</strong>?</p>
+
+@if (Model.ImagePaths.Count > 0)
+{
+    <div class="d-flex flex-wrap gap-2 mb-3">
+        @foreach (var imagePath in Model.ImagePaths)
+        {
+            <img src="@imagePath" alt="@Model.Name" class="product-thumbnail" />
+        }
+    </div>
+}
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>
