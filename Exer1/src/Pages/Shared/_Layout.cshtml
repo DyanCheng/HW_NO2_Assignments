@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Tin tức mới nhất</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/test.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="border-bottom mb-4">
+        <div class="container d-flex align-items-center py-2" style="font-size: 15px; font-weight: 500;">
+            <a href="#" class="text-decoration-none me-3" style="color: #555;">
+                <div style="background-color: #eee; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3l-10 9h3v8h14v-8h3z"/>
+                    </svg>
+                </div>
+            </a>
+            <nav class="d-flex gap-3 text-nowrap overflow-auto" style="color: #333;">
+                <a href="#" class="text-dark text-decoration-none">VnE-GO</a>
+                <a href="#" class="text-dark text-decoration-none">Thời sự</a>
+                <a href="#" class="text-dark text-decoration-none">Thế giới</a>
+                <a href="#" class="text-dark text-decoration-none">Kinh doanh</a>
+                <a href="#" class="text-dark text-decoration-none">Khoa học công nghệ</a>
+                <a href="#" class="text-dark text-decoration-none">Góc nhìn</a>
+                <a href="#" class="text-dark text-decoration-none">Spotlight</a>
+                <a href="#" class="text-dark text-decoration-none">Bất động sản</a>
+                <a href="#" class="text-dark text-decoration-none">Sức khỏe</a>
+                <a href="#" class="text-dark text-decoration-none">Giải trí</a>
+                <a href="#" class="text-dark text-decoration-none">Thể thao</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

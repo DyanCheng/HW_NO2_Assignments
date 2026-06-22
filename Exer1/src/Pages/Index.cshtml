@@ -1,0 +1,92 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<style>
+    .article-title {
+        font-family: "Merriweather", serif; /* VNE fonts look somewhat serif for titles */
+        font-weight: 700;
+        color: #222;
+        text-decoration: none;
+        line-height: 1.3;
+    }
+    .article-title:hover {
+        color: #0056b3;
+    }
+    .article-desc {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    .text-meta {
+        color: #777;
+        font-size: 0.85rem;
+    }
+    .cat-title {
+        color: #9f224e;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+    .bg-light-gray {
+        background-color: #f7f7f7;
+    }
+</style>
+
+<div class="container pb-5">
+    <!-- Top News -->
+    <div class="row mb-4">
+        <!-- Main Image -->
+        <div class="col-md-8">
+            <img src="~/images/image.png" alt="Sông Hồng" class="img-fluid w-100 object-fit-cover" style="height: 380px;" />
+        </div>
+        <!-- Main Title & Desc -->
+        <div class="col-md-4">
+            <h2 class="mb-3">
+                <a href="#" class="article-title fs-3">'Ưu tiên tái định cư trước khi triển khai Trục cảnh quan sông Hồng'</a>
+            </h2>
+            <p class="article-desc mb-2">Hà Nội sẽ ưu tiên xây dựng các khu tái định cư trước khi triển khai Trục Đại lộ cảnh quan sông Hồng - dự án hơn 11.400 ha, liên quan khoảng 247.000 dân ven sông, thực hiện giai đoạn 2026-2038.</p>
+            <span class="text-meta">1h trước</span>
+        </div>
+    </div>
+
+    <hr class="text-muted mb-4" />
+
+    <!-- Bottom Row News -->
+    <div class="row">
+        <!-- Col 1 -->
+        <div class="col-md-4">
+            <h3 class="mb-3">
+                <a href="#" class="article-title fs-5">Hà Nội giải phóng mặt bằng cho hơn 1.400 dự án</a>
+            </h3>
+            <img src="~/images/image2.png" alt="Giải phóng mặt bằng" class="img-fluid w-100 object-fit-cover" style="height: 220px;" />
+        </div>
+
+        <!-- Col 2 -->
+        <div class="col-md-4">
+            <h3 class="mb-3">
+                <a href="#" class="article-title fs-5">TP HCM siết kiểm soát người nhập cảnh phòng Ebola</a>
+            </h3>
+            <img src="~/images/image3.png" alt="Sân bay" class="img-fluid w-100 object-fit-cover" style="height: 220px;" />
+        </div>
+
+        <!-- Col 3 -->
+        <div class="col-md-4">
+            <div class="bg-light-gray h-100 p-3">
+                <span class="cat-title">Góc nhìn</span>
+                <h3 class="mb-2">
+                    <a href="#" class="article-title fs-5">'Bóc lột' trên YouTube</a>
+                </h3>
+                <p class="article-desc mb-4">Khi cỗ máy Content ID của YouTube bị trục lợi, nhiều nghệ sĩ...</p>
+                <div class="d-flex align-items-center text-meta" style="font-family: Georgia, serif; font-style: italic;">
+                    <span class="me-2">Hoàng Hà</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="me-1 text-muted"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    <span class="text-muted" style="font-style: normal;">24</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

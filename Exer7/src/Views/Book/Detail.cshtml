@@ -1,0 +1,37 @@
+@model Book
+@{
+    ViewData["Title"] = "Chi tiết sách";
+}
+
+<h2>Chi tiết sách</h2>
+
+<dl class="row">
+    <dt class="col-sm-3">Id</dt>
+    <dd class="col-sm-9">@Model.Id</dd>
+
+    <dt class="col-sm-3">Tên</dt>
+    <dd class="col-sm-9">@Model.Name</dd>
+
+    <dt class="col-sm-3">Giá</dt>
+    <dd class="col-sm-9">@Model.Price.ToString("N2")</dd>
+
+    <dt class="col-sm-3">Hình ảnh</dt>
+    <dd class="col-sm-9">
+        @if (Model.ImagePaths.Count == 0)
+        {
+            <span class="text-muted">Chưa có ảnh</span>
+        }
+        else
+        {
+            <div class="d-flex flex-wrap gap-2">
+                @foreach (var imagePath in Model.ImagePaths)
+                {
+                    <img src="@imagePath" alt="@Model.Name" class="product-image" />
+                }
+            </div>
+        }
+    </dd>
+</dl>
+
+<a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Sửa</a>
